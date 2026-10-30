@@ -28,3 +28,4 @@ module Granite
     end
   end
 end
+
