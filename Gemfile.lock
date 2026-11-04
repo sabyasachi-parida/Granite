@@ -115,6 +115,9 @@ GEM
     concurrent-ruby (1.3.8)
     connection_pool (2.5.5)
     crass (1.0.8)
+    data_migrate (11.3.1)
+      activerecord (>= 6.1)
+      railties (>= 6.1)
     date (3.6.0)
     debug (1.11.1)
       irb (~> 1.10)
@@ -402,6 +405,7 @@ DEPENDENCIES
   bootsnap
   brakeman
   connection_pool (~> 2.4)
+  data_migrate
   debug
   erb_lint!
   jbuilder
@@ -458,6 +462,7 @@ CHECKSUMS
   concurrent-ruby (1.3.8) sha256=b2f1be836e968ccc78ccfce277ea79c72a88633f22306782c16ff23fb415d1e1
   connection_pool (2.5.5) sha256=e54ff92855753df1fd7c59fa04a398833355f27dd14c074f8c83a05f72a716ad
   crass (1.0.8) sha256=7a0145c7a2c59f8e7923b3a69ce819c444823a00a5127d805298fea13be24efe
+  data_migrate (11.3.1) sha256=18b9b2189d15e482d5335f3fc2248b8b447204bd8257ded872dd077737168ffb
   date (3.6.0) sha256=18ac945c4e24ebd93534f8eab8c2fd8c5604b3e977105b3798d62a1e8d27b580
   debug (1.11.1) sha256=2e0b0ac6119f2207a6f8ac7d4a73ca8eb4e440f64da0a3136c30343146e952b6
   dotenv (3.2.0) sha256=e375b83121ea7ca4ce20f214740076129ab8514cd81378161f11c03853fe619d
