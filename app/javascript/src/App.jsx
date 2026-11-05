@@ -1,7 +1,7 @@
 import React from "react";
 
 import Dashboard from "components/Dashboard";
-import { CreateTask, ShowTask } from "components/Tasks";
+import { CreateTask, ShowTask, EditTask } from "components/Tasks";
 import { Route, Switch, BrowserRouter as Router } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 
@@ -10,6 +10,7 @@ const App = () => (
     <ToastContainer />
     <Switch>
       <Route exact path="/" render={() => <div>Home</div>} />
+      <Route exact component={EditTask} path="/tasks/:slug/edit" />
       <Route exact component={ShowTask} path="/tasks/:slug/show" />
       <Route exact path="/about" render={() => <div>About</div>} />
       <Route exact component={CreateTask} path="/tasks/create" />
