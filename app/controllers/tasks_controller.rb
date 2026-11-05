@@ -24,7 +24,7 @@ class TasksController < ApplicationController
   end
 
   def destroy
-    @task.delete!
+    @task.destroy!
     render_json
   end
 
