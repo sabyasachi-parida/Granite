@@ -8,6 +8,7 @@ class User < ApplicationRecord
 
   has_many :assigned_tasks, foreign_key: :assigned_user_id, class_name: "Task"
   has_secure_password
+  has_secure_token :authentication_token
   validates :password, presence: true, length: { minimum: MIN_PASSWORD_LENGTH }, if: -> { password.present? }
   validates :password_confirmation, presence: true, on: :create
   validates :name,
