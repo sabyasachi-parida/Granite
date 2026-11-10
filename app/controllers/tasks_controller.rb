@@ -2,28 +2,36 @@
 
 class TasksController < ApplicationController
   respond_to :html, :xml, :json
+  rescue_from Pundit::NotAuthorizedError, with: :handle_authorization_error
   before_action :load_task!, only: %i[show update destroy]
+  after_action :verify_authorized, except: :index
+  after_action :verify_policy_scoped, only: :index
   def index
-    tasks = Task.all.as_json(include: { assigned_user: { only: %i[name id] } })
-    render_json({ tasks: })
+    tasks = policy_scope(Task)
+    tasks_with_assigned_user = tasks.as_json(include: { assigned_user: { only: %i[name id] } })
+    render_json({ tasks: tasks_with_assigned_user })
   end
 
   def create
     task = current_user.created_tasks.new(task_params)
+    authorize task
     task.save!
     render_notice(t("successfully_created", entity: "Task"))
   end
 
   def show
+    authorize @task
     render
   end
 
   def update
+    authorize @task
     @task.update!(task_params)
     render_notice(t("successfully_created", entity: "Task"))
   end
 
   def destroy
+    authorize @task
     @task.destroy!
     render_json
   end
@@ -36,5 +44,9 @@ class TasksController < ApplicationController
 
     def load_task!
       @task = Task.find_by!(slug: params[:slug])
+    end
+
+    def handle_authorization_error
+      render_error(t("authorization.denied"), :forbidden)
     end
 end
