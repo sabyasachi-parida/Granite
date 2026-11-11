@@ -187,6 +187,12 @@ GEM
     minitest (6.0.6)
       drb (~> 2.0)
       prism (~> 1.5)
+    minitest-bisect (1.8.0)
+      minitest-server (~> 1.0)
+      path_expander (~> 2.0)
+    minitest-server (1.0.9)
+      drb (~> 2.0)
+      minitest (> 5.16)
     msgpack (1.8.6)
     net-imap (0.6.8)
       date
@@ -225,6 +231,7 @@ GEM
     parser (3.3.13.0)
       ast (~> 2.4.1)
       racc
+    path_expander (2.0.1)
     pp (0.6.4)
       prettyprint
     prettyprint (0.2.1)
@@ -426,6 +433,7 @@ DEPENDENCIES
   jsbundling-rails
   json (< 3.0.0)
   kamal
+  minitest-bisect
   pry-byebug
   puma (>= 5.0)
   pundit
@@ -511,6 +519,8 @@ CHECKSUMS
   method_source (1.1.0) sha256=181301c9c45b731b4769bc81e8860e72f9161ad7d66dd99103c9ab84f560f5c5
   mini_mime (1.1.5) sha256=8681b7e2e4215f2a159f9400b5816d85e9d8c6c6b491e96a12797e798f8bccef
   minitest (6.0.6) sha256=153ea36d1d987a62942382b61075745042a2b3123b1cd48f4c3675af9cc7d6f1
+  minitest-bisect (1.8.0) sha256=0169e2d6e0cc2fe3d7c3b6d9f48331dbfa89f556a6d42594f971868346e95fdb
+  minitest-server (1.0.9) sha256=dea8bf634fcc560c6534802d45b856bf723b5cf4f7f62180c1735e9e136db452
   msgpack (1.8.6) sha256=a148c24e7d9026a88baf78918f6b1c297569bb6cc0f87953f444f3069950d4e5
   net-imap (0.6.8) sha256=eb30bb62227b64a3af6b518b04b2375113d69f68f15de59b0193b07d98acf6d9
   net-pop (0.1.2) sha256=848b4e982013c15b2f0382792268763b748cce91c9e91e36b0f27ed26420dff3
@@ -531,6 +541,7 @@ CHECKSUMS
   ostruct (0.6.3) sha256=95a2ed4a4bd1d190784e666b47b2d3f078e4a9efda2fccf18f84ddc6538ed912
   parallel (2.3.0) sha256=f75a3e904101ce6a1ccb6b8dc800cbafd42166d83330192438dcf29395167a6f
   parser (3.3.13.0) sha256=e02f9b63c2fe05b0c68f692ba4df89b3cb113b663964f75d988fbebfd6c3deca
+  path_expander (2.0.1) sha256=2de201164bff4719cc4d0b3767286e9977cc832a59c4d70abab571ec86cb41e4
   pp (0.6.4) sha256=dfcb0fce700c41456265922884f9fe195d7fbb0674a3578e6c0f69588e82b570
   prettyprint (0.2.1) sha256=d555d57ea6d7cf001d4774b693546a6bd88bec1e778ddffb5c60b68ceec4b7d4
   prism (1.9.0) sha256=7b530c6a9f92c24300014919c9dcbc055bf4cdf51ec30aed099b06cd6674ef85
